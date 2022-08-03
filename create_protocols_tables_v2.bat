@@ -404,6 +404,10 @@ def tables_to_py(tbls, fname='tbls.py'):
 def tables_to_json(tbls, fname):
     print(end=f'{fname} ...', flush=True)
     txt_json = dumps(tbls, indent=1, ensure_ascii=False, default=float)
+#    txt_json0 = Path(fname).read_text(encoding="utf8")
+#    if txt_json == txt_json0:
+#        print(' файл не змінений')
+#        return
     Path(fname).write_text(txt_json, encoding="utf8")
     print(' файл створено, записано')
 #-------------------------------------------------------------------------------
@@ -621,5 +625,6 @@ if not DIR_DICTS.exists():
         print(end=f'Файл {fpne.name} ... ', flush=True)
         txt_xml = dict2xml(dev_dicts, wrap=dev)
         fpne.write_text(txt_xml, encoding='utf8')
-        print('створено, записано')'''
+        print('створено, записано')
+'''
 #-------------------------------------------------------------------------------
